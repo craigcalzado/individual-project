@@ -58,7 +58,8 @@ def build_df_list_rename(series_id_list, series_name_list):
 
 def epi_series(category_id):
     """ Returns the name of the category with the given id."""
-    url = 'https://api.eia.gov/series/?api_key=9eVTCpuQVgMQDZnriiK5gt3uNzwJMzzf4dBzvE2s&series_id=' + category_id
+    key = env.api_key
+    url = 'https://api.eia.gov/series/?api_key=' + key + '&series_id=' + category_id
     result = requests.get(url)
     result.status_code
     result.json()
