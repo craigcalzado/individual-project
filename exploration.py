@@ -24,15 +24,6 @@ def box_plots(train):
     """
     # create new column for the month name
     train['month'] = train.index.month_name()
-    # create a box plot for the month production
-    sns.boxplot(data=train, y='total_fossil_fuels_production_monthly', x='month')
-    # rotate x-axis labels
-    plt.xticks(rotation=45)
-    # add labels
-    plt.xlabel('Month')
-    plt.ylabel('Fossil Fuels Production (Million BTU)')
-    plt.title('The porduction of fossil fuels per month in the US')
-    plt.show()
     # box plot consumption
     sns.boxplot(data=train, y='total_fossil_fuels_consumption_monthly', x='month')
     # rotate x-axis labels
@@ -41,6 +32,15 @@ def box_plots(train):
     plt.xlabel('Month')
     plt.ylabel('Fossil Fuels Consumption (Million BTU)')
     plt.title('The consumption of fossil fuels per month in the US')
+    plt.show()
+    # create a box plot for the month production
+    sns.boxplot(data=train, y='total_fossil_fuels_production_monthly', x='month')
+    # rotate x-axis labels
+    plt.xticks(rotation=45)
+    # add labels
+    plt.xlabel('Month')
+    plt.ylabel('Fossil Fuels Production (Million BTU)')
+    plt.title('The porduction of fossil fuels per month in the US')
     plt.show()
     return
 
@@ -51,6 +51,17 @@ def line_plots(train):
     # create vaiables for ease of plotting
     y = train.total_fossil_fuels_production_monthly
     x = train.total_fossil_fuels_consumption_monthly
+    x.plot(alpha=.2, label='Monthly')
+    x.resample('3M').mean().plot(alpha=.5, label='Tri-Monthly')
+    x.resample('6M').mean().plot(alpha=.8, label='Bi-Yearly')
+    x.resample('Y').mean().plot(label='Yearly')
+    x.resample('5Y').mean().plot(label='Bi-Decade')
+    plt.legend()
+    # add labels
+    plt.xlabel('Date')
+    plt.ylabel('Consumption (MtCO2)')
+    plt.title('Fossil fuel consumption is at a steady decline.')
+    plt.show()
     # create line plot
     y.plot(alpha=.2, label='Monthly')
     y.resample('3M').mean().plot(alpha=.5, label='Tri-Monthly')
@@ -63,14 +74,4 @@ def line_plots(train):
     plt.ylabel('Production (MtCO2)')
     plt.title('The production of fossil fuels increases with time exponentially.')
     plt.show()
-    x.plot(alpha=.2, label='Monthly')
-    x.resample('3M').mean().plot(alpha=.5, label='Tri-Monthly')
-    x.resample('6M').mean().plot(alpha=.8, label='Bi-Yearly')
-    x.resample('Y').mean().plot(label='Yearly')
-    x.resample('5Y').mean().plot(label='Bi-Decade')
-    plt.legend()
-    # add labels
-    plt.xlabel('Date')
-    plt.ylabel('Consumption (MtCO2)')
-    plt.title('Fossil fuel consumption is at a steady decline.')
     return
