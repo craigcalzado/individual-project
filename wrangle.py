@@ -24,8 +24,6 @@ def data_manipulation(data):
         if df_series['f'][i] == 'M':
             series_id.append(df_series['series_id'][i])
             series_name.append(df_series['name'][i])
-    print(series_id)
-    print(series_name)
     return series_id, series_name
 
     # create a function that turns the data into a dataframe
@@ -86,5 +84,5 @@ def feat_eng(df):
     return df
 
 def fossil_fuels(df):
-    df = df[['total_fossil_fuels_production_monthly', 'total_fossil_fuels_consumption_monthly', 'fossil_fuels_difference']]
+    df = df[['total_fossil_fuels_production_monthly', 'total_fossil_fuels_consumption_monthly']]
     return df
