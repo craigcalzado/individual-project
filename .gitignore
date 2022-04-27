@@ -4,5 +4,7 @@ env.py
 __pycache__/
 *.csv
 *.xlsx
-scaling_lesson.ipynb
-modeling_lesson.ipynb
+
+# .py file used for wrangle.py
+acquire.py
+prep.py
