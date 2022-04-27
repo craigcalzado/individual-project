@@ -134,7 +134,9 @@ Looking at a month to month cycle the production of fossil fuels has a steady tr
 With more time, I would like to:
 
  - Look into other fuel types and compare the trends of fossil fuels.
- - Look into how to improve the impact of profit by individual products
+ - Understand the potential of alternative energy sources.
+ - Utilize the data to determine the price of fossil fuels.
+ - Figure out how to better utilize the data to predict the production and consumption of fossil fuels.
 
 ---
 
