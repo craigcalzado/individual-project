@@ -136,7 +136,15 @@ With more time, I would like to:
  - Look into other fuel types and compare the trends of fossil fuels.
  - Look into how to improve the impact of profit by individual products
 
---- 
+---
+
+ ## References:
+
+If you have any questions, please contact me at: craig.a.calzado@gmail.com 
+
+Subject line: "Fossil Fuel Project" (note: anything else will be ignored)
+
+
 
 
 
