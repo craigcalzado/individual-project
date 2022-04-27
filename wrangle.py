@@ -86,3 +86,12 @@ def feat_eng(df):
 def fossil_fuels(df):
     df = df[['total_fossil_fuels_production_monthly', 'total_fossil_fuels_consumption_monthly']]
     return df
+
+def total_wrangle(id):
+    data = epi_category(id)
+    series_id_list, series_name_list = data_manipulation(data)
+    df_list = build_df_list_rename(series_id_list, series_name_list)
+    df = prep_data(df_list)
+    df = feat_eng(df) 
+    df = fossil_fuels(df)
+    return df

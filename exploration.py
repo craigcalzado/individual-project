@@ -11,6 +11,11 @@ def explore_split(df):
 
     plt.plot(train.index, train.total_fossil_fuels_production_monthly)
     plt.plot(test.index, test.total_fossil_fuels_production_monthly)
+    # add labels
+    plt.xlabel('Date')
+    plt.ylabel('Production (MtCO2)')
+    plt.title('Shows the distribution of the data split for exploration.')
+    plt.show()
     return train, test
 
 def box_plots(train):
@@ -26,7 +31,7 @@ def box_plots(train):
     # add labels
     plt.xlabel('Month')
     plt.ylabel('Fossil Fuels Production (Million BTU)')
-    plt.title('Fossil Fuels Production by Month')
+    plt.title('The porduction of fossil fuels per month in the US')
     plt.show()
     # box plot consumption
     sns.boxplot(data=train, y='total_fossil_fuels_consumption_monthly', x='month')
@@ -35,7 +40,7 @@ def box_plots(train):
     # add labels
     plt.xlabel('Month')
     plt.ylabel('Fossil Fuels Consumption (Million BTU)')
-    plt.title('Fossil Fuels Consumption by Month')
+    plt.title('The consumption of fossil fuels per month in the US')
     plt.show()
     return
 
@@ -56,7 +61,7 @@ def line_plots(train):
     # add labels
     plt.xlabel('Date')
     plt.ylabel('Production (MtCO2)')
-    plt.title('Fossil Fuels Production')
+    plt.title('As time progresses, the production of fossil fuels increases with an exponetial shape.')
     plt.show()
     x.plot(alpha=.2, label='Monthly')
     x.resample('3M').mean().plot(alpha=.5, label='Tri-Monthly')
@@ -67,5 +72,5 @@ def line_plots(train):
     # add labels
     plt.xlabel('Date')
     plt.ylabel('Consumption (MtCO2)')
-    plt.title('Fossil Fuels Consumption')
+    plt.title('Fossil fuel consumption is at a steady decline.')
     return
