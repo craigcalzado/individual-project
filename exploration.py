@@ -61,7 +61,7 @@ def line_plots(train):
     # add labels
     plt.xlabel('Date')
     plt.ylabel('Production (MtCO2)')
-    plt.title('As time progresses, the production of fossil fuels increases with an exponetial shape.')
+    plt.title('The production of fossil fuels increases with time exponentially.')
     plt.show()
     x.plot(alpha=.2, label='Monthly')
     x.resample('3M').mean().plot(alpha=.5, label='Tri-Monthly')

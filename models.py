@@ -88,16 +88,16 @@ def holts_15_12_model(train, validate):
         model = model.fit(smoothing_level=0.15, smoothing_slope=0.12, optimized=False)
         yhat_items = model.predict(start = validate.index[0], end= validate.index[-1])
         yhat_df[col] = round(yhat_items, 2)
-    train.rename(columns={'total_fossil_fuels_production_monthly': 'Holts 15/12 model achieved a RMSE score of 364.'}, inplace=True)
-    train.rename(columns={'total_fossil_fuels_consumption_monthly': 'Holts 15/12 model achieved a RMSE score of 645.'}, inplace=True)
-    validate.rename(columns={'total_fossil_fuels_production_monthly': 'Holts 15/12 model achieved a RMSE score of 364.'}, inplace=True)
-    validate.rename(columns={'total_fossil_fuels_consumption_monthly': 'Holts 15/12 model achieved a RMSE score of 645.'}, inplace=True)
-    yhat_df.rename(columns={'total_fossil_fuels_production_monthly': 'Holts 15/12 model achieved a RMSE score of 364.'}, inplace=True)
-    yhat_df.rename(columns={'total_fossil_fuels_consumption_monthly': 'Holts 15/12 model achieved a RMSE score of 645.'}, inplace=True)
+    train.rename(columns={'total_fossil_fuels_production_monthly': 'Production: Holts 15/12 model achieved a RMSE score of 364.'}, inplace=True)
+    train.rename(columns={'total_fossil_fuels_consumption_monthly': 'Consumption: Holts 15/12 model achieved a RMSE score of 645.'}, inplace=True)
+    validate.rename(columns={'total_fossil_fuels_production_monthly': 'Production: Holts 15/12 model achieved a RMSE score of 364.'}, inplace=True)
+    validate.rename(columns={'total_fossil_fuels_consumption_monthly': 'Consumption: Holts 15/12 model achieved a RMSE score of 645.'}, inplace=True)
+    yhat_df.rename(columns={'total_fossil_fuels_production_monthly': 'Production: Holts 15/12 model achieved a RMSE score of 364.'}, inplace=True)
+    yhat_df.rename(columns={'total_fossil_fuels_consumption_monthly': 'Consumption: Holts 15/12 model achieved a RMSE score of 645.'}, inplace=True)
 
     for col in train.columns:
         plot_and_eval(col, train, validate , yhat_df)
-    return yhat_df
+    return 
 
 # previous_year model
 
